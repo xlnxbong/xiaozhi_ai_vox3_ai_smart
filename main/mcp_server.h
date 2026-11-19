@@ -122,7 +122,7 @@ public:
 
     std::string to_json() const {
         cJSON *json = cJSON_CreateObject();
-        
+
         if (type_ == kPropertyTypeBoolean) {
             cJSON_AddStringToObject(json, "type", "boolean");
             if (has_default_value_) {
@@ -144,13 +144,16 @@ public:
             if (has_default_value_) {
                 cJSON_AddStringToObject(json, "default", value<std::string>().c_str());
             }
+        } else {
+            cJSON_Delete(json);
+            throw std::invalid_argument("Unsupported property type");
         }
-        
+
         char *json_str = cJSON_PrintUnformatted(json);
         std::string result(json_str);
         cJSON_free(json_str);
         cJSON_Delete(json);
-        
+
         return result;
     }
 };
