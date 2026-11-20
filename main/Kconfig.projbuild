@@ -2,7 +2,7 @@ menu "Xiaozhi Assistant"
 
 config OTA_URL
     string "Default OTA URL"
-    # BH exclude - default "https://api.tenclass.net/xiaozhi/ota/"
+    # BH change - default "https://api.tenclass.net/xiaozhi/ota/"
     default "http://172.25.163.239:8003/xiaozhi/ota/"
     help
         The application will access this URL to check for new firmwares and server address.
@@ -36,7 +36,8 @@ config CUSTOM_ASSETS_FILE
 
 choice
     prompt "Default Language"
-    default LANGUAGE_ZH_CN
+    # BH change default LANGUAGE_ZH_CN
+    default LANGUAGE_EN_US
     help
         Select device display language
 
