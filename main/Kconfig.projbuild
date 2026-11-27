@@ -37,8 +37,7 @@ config CUSTOM_ASSETS_FILE
 
 choice
     prompt "Default Language"
-    # BH change default LANGUAGE_ZH_CN
-    default LANGUAGE_EN_US
+    default LANGUAGE_ZH_CN
     help
         Select device display language
 
@@ -857,8 +856,7 @@ endchoice
 config USE_MULTILINE_CHAT_MESSAGE
     bool "Use multiline chat message display (default mode only)"
     depends on USE_DEFAULT_MESSAGE_STYLE
-    #BH change 27-11-26 default n
-    default y
+    default n
     help
         When enabled, the chat message area in the default display mode shows
         multiple wrapped lines that grow upward from the bottom of the screen,
