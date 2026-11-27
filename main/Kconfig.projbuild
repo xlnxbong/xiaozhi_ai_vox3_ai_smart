@@ -3,7 +3,8 @@ menu "Xiaozhi Assistant"
 config OTA_URL
     string "Default OTA URL"
     # BH change - default "https://api.tenclass.net/xiaozhi/ota/"
-    default "http://192.168.10.119:8003/xiaozhi/ota/"
+    # BH note - change port to 8002 for full deployment else use 8003
+    default "http://192.168.10.119:8002/xiaozhi/ota/"
     help
         The application will access this URL to check for new firmwares and server address.
 
@@ -856,7 +857,8 @@ endchoice
 config USE_MULTILINE_CHAT_MESSAGE
     bool "Use multiline chat message display (default mode only)"
     depends on USE_DEFAULT_MESSAGE_STYLE
-    default n
+    #BH change 27-11-26 default n
+    default y
     help
         When enabled, the chat message area in the default display mode shows
         multiple wrapped lines that grow upward from the bottom of the screen,
